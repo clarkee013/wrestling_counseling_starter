@@ -112,6 +112,7 @@ public class Subject {
         return sc.nextInt();
     }
 
+
 }
 
 

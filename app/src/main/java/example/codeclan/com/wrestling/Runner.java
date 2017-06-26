@@ -9,6 +9,7 @@ public class Runner {
 
 
         Subject.listSubjectIdAndName();
-        Subject.selector();
+        int selector = Subject.selector();
+        Subject.listSubjectIdAndName(selector);
     }
 }
