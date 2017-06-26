@@ -35,6 +35,10 @@ public class Subject {
         return counselor_id;
     }
 
+    public int getSubject_id() {
+        return id;
+    }
+
     public static void all(){
         String sql = String.format("SELECT * FROM subjects;");
         ResultSet rs = SqlRunner.executeQuery(sql);
@@ -83,6 +87,24 @@ public class Subject {
         }
 
     }
+
+    public static ResultSet listSubjectIdAndName() {
+        String sql = String.format("SELECT id, name FROM subjects;");
+        ResultSet rs = SqlRunner.executeQuery(sql);
+        try {
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String name = rs.getString("name");
+                System.out.println(id + " " + name);
+            }
+        } catch (Exception ex) {
+            System.exit(0);
+        } finally {
+            SqlRunner.closeConnection();
+        } return rs;
+    }
+
+
 }
 
 
