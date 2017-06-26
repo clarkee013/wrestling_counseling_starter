@@ -1,6 +1,8 @@
 package example.codeclan.com.wrestling;
 
 import java.sql.ResultSet;
+import java.util.List;
+import java.util.Scanner;
 
 import db.SqlRunner;
 
@@ -104,8 +106,11 @@ public class Subject {
         } return rs;
     }
 
-
-
+    public static int selector() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Please make a selection: ");
+        return sc.nextInt();
+    }
 
 }
 
