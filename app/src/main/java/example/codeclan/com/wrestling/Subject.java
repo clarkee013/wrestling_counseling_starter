@@ -4,6 +4,8 @@ import java.sql.ResultSet;
 
 import db.SqlRunner;
 
+import static example.codeclan.com.wrestling.Subject.all;
+
 /**
  * Created by user on 26/06/2017.
  */
@@ -31,6 +33,25 @@ public class Subject {
 
     public int getCounselor_id() {
         return counselor_id;
+    }
+
+    public static void all(){
+        String sql = "SELECT * FROM subjects;";
+        ResultSet rs = SqlRunner.executeQuery(sql);
+        try{
+            while (rs.next()) {
+                String title = rs.getString("title");
+                String description = rs.getString("description");
+                System.out.println("Title: " + title);
+                System.out.println("Description: " + description);
+                System.out.println();
+            }
+        } catch (Exception ex){
+            System.exit(0);
+        } finally {
+            SqlRunner.closeConnection();
+        }
+
     }
 
     public void getAllDetails() {

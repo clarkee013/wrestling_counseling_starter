@@ -7,5 +7,7 @@ package example.codeclan.com.wrestling;
 public class Runner {
     public static void main(String[] args) {
 
+        Subject.all();
+
     }
 }
