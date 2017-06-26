@@ -10,7 +10,7 @@ public class Runner {
 
         Subject.listSubjectIdAndName();
         int selector = Subject.selector();
-        Subject.listSubjectIdAndName(selector);
+        Subject.getAllDetails (selector);
     }
 }
 

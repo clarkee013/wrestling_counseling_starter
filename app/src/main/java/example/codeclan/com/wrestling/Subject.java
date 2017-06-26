@@ -62,7 +62,7 @@ public class Subject {
 
     }
 
-    public void getAllDetails() {
+    public static void getAllDetails() {
         String sql = String.format("SELECT subjects.name, counselors.first_name, counselors.nick_name, counselors.last_name, counselors.member_since, counselors.email, counselors.telephone FROM subjects INNER JOIN counselors on counselors.id = subjects.counselor_id WHERE subjects.id = %d;", this.id);
         ResultSet rs = SqlRunner.executeQuery(sql);
         try {
@@ -111,6 +111,7 @@ public class Subject {
         System.out.println("Please make a selection: ");
         return sc.nextInt();
     }
+
 
 
 }
