@@ -36,14 +36,16 @@ public class Subject {
     }
 
     public static void all(){
-        String sql = "SELECT * FROM subjects;";
+        String sql = String.format("SELECT * FROM subjects;");
         ResultSet rs = SqlRunner.executeQuery(sql);
         try{
             while (rs.next()) {
                 String title = rs.getString("title");
                 String description = rs.getString("description");
+                int counselor_id = rs.getInt("counselor_id");
                 System.out.println("Title: " + title);
                 System.out.println("Description: " + description);
+                System.out.println("Counselor_ID: " + counselor_id);
                 System.out.println();
             }
         } catch (Exception ex){
